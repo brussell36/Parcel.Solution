@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Shipping.Models;
 
 namespace Shipping.Controllers
 {
@@ -10,6 +11,5 @@ namespace Shipping.Controllers
       {
         return View();
       }
-
     }
 }

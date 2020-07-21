@@ -1,0 +1,16 @@
+@using Shipping.Models;
+
+<h1>Parcel List</h1>
+<ul>
+  @foreach (Parcel parcel in Model)
+  {
+    <li>
+      @parcel.Height
+      @parcel.Length
+      @parcel.Width
+      @parcel.Weight
+    </li>
+  }
+
+</ul>
+<a href="/parcels/new">Add a new parcel.</a>

@@ -12,6 +12,9 @@ namespace Shipping.Models
     public int Size { get; set; }
     public int Cost { get; set; }
 
+    private static List<Parcel> _instances = new List<Parcel> {};
+
+    
     public Parcel (int height, int length, int width, int weight)
     {
       Height = height;
@@ -20,6 +23,7 @@ namespace Shipping.Models
       Weight = weight;
       int Size = 0;
       int Cost = 0;
+      _instances.Add(this);
     }
     public int Volume ()
     {
@@ -31,11 +35,11 @@ namespace Shipping.Models
       int price = 0;
       for (int i = 1; i <= Size; i++)
       {
-        if (i <= 5)
+        if (i <= 1200)
         {
           price += 1;
         }
-        else if (i >= 5)
+        else if (i >= 1200)
         {
           price += 2;
         } 
@@ -44,7 +48,13 @@ namespace Shipping.Models
       // {
 
       // }
-      return price / 100;
+      Cost = price /100;
+      return Cost;
+    }
+
+    public static List<Parcel> GetAll()
+    {
+      return _instances;
     }
   }
 }
