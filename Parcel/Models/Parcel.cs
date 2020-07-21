@@ -26,7 +26,7 @@ namespace Shipping.Models
       Size = Height * Length * Width;
       return Size;
 }
-    private int ShippingCalc()
+    public int ShippingCalc()
     {
       int price = 0;
       for (int i = 1; i <= Size; i++)
@@ -44,7 +44,7 @@ namespace Shipping.Models
       // {
 
       // }
-      return price;
+      return price / 100;
     }
   }
 }

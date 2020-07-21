@@ -13,7 +13,7 @@ namespace Shipping.Tests
     {
       Parcel parcelOrder = new Parcel(12, 12, 12, 6);
       parcelOrder.Volume();
-      Assert.AreEqual(54, parcelOrder.Cost);
+      Assert.AreEqual(34, parcelOrder.ShippingCalc());
     }    
   }
 }
