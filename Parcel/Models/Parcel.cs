@@ -1,4 +1,7 @@
-namespace Shipping
+using System.Collections.Generic;
+using System;
+
+namespace Shipping.Models
 {
   public class Parcel
   {
@@ -6,6 +9,8 @@ namespace Shipping
     public int Length { get; set; }
     public int Width { get; set; }
     public int Weight { get; set; }
+    public int Size { get; set; }
+    public int Cost { get; set; }
 
     public Parcel (int height, int length, int width, int weight)
     {
@@ -13,17 +18,18 @@ namespace Shipping
       Length = length;
       Width = width;
       Weight = weight;
-      int Volume = 0;
+      int Size = 0;
       int Cost = 0;
     }
     public int Volume ()
     {
-      Volume = Height * Length * Width;
-    }
-    public int ShippingCalc()
+      Size = Height * Length * Width;
+      return Size;
+}
+    private int ShippingCalc()
     {
       int price = 0;
-      for (int i = 1; i <= VolumeOfParcel; i++)
+      for (int i = 1; i <= Size; i++)
       {
         if (i <= 5)
         {
@@ -34,6 +40,10 @@ namespace Shipping
           price += 2;
         } 
       }
+      // if (weight >= 3)
+      // {
+
+      // }
       return price;
     }
   }
